@@ -24,7 +24,7 @@ jobs:
       - name: Setup Binaryen
         uses: Aandreba/setup-binaryen@v1.0.0
         with:
-          token: ${{ actions.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -67,7 +67,7 @@ jobs:
         with:
           delete_release: true
           tag_name: latest
-          github_token: ${{ secret.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get artifacts
         uses: actions/download-artifact@v4
