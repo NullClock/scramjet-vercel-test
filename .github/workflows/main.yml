@@ -24,7 +24,7 @@ jobs:
       - name: Setup Binaryen
         uses: Aandreba/setup-binaryen@v1.0.0
         with:
-          token: ${{ github.token }}
+          token: ${{ actions.GITHUB_TOKEN }}
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -67,7 +67,7 @@ jobs:
         with:
           delete_release: true
           tag_name: latest
-          github_token: ${{ github.token }}
+          github_token: ${{ secret.GITHUB_TOKEN }}
 
       - name: Get artifacts
         uses: actions/download-artifact@v4
@@ -87,6 +87,6 @@ jobs:
           name: Continuous Build
           tag: latest
           commit: main
-          body: ${{ github.event.head_commit.message }}
+          body: "wow. much code. much fun!"
           artifacts: "scramjet.zip"
           prerelease: true
