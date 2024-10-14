@@ -2,14 +2,14 @@
   "installCommand": "npm i -g pnpm && pnpm install",
   "builds": [
     {
-      "src": "index.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "index.js"
+      "dest": "server.js"
     }
   ]
 }
